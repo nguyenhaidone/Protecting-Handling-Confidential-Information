@@ -2,7 +2,7 @@
 using namespace std;
 
 //tinh modulo theo phuong phap ha bac
-int getValue(int &a, int &m, int &n){
+int getValue(int a, int m, int n){
 	int arr[100];
 	int x=0;
 	while(m>3){

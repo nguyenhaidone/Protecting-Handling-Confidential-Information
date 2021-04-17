@@ -69,9 +69,9 @@ int main(){
 	int gu1 = getValue(g,u1,p);
 	int yu2 = getValue(y,u2,p);
 	int v = ((gu1*yu2)%p)%q;
-	cout<<endl<<w<<" - "<<u1<<" - "<<u2<<" - "<<gu1<<" - "<<yu2<<" - "<<v<<endl;
+	cout<<endl<<"w = "<<w<<" || u1 = "<<u1<<" || u2 = "<<u2<<" || gu1 = "<<gu1<<" || yu2 = "<<yu2<<" || v = "<<v<<endl;
 	if(v==rFake)
-		cout<<"Dung roi!";
+		cout<<"Do v:"<<v<<" = r':"<<rFake<<" nen dung roi!";
 	else
 		cout<<"Sai roi!";
 	

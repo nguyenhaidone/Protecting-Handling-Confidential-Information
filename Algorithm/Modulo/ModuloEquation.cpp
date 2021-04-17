@@ -32,14 +32,11 @@ int getValue(int a, int m, int n){
 
 //tinh nghich dao modulo
 
-int power(int x, unsigned int y, unsigned int m)
+int modInverse(int a, int m)
 {
-    if (y == 0)
-        return 1;
-    int p = power(x, y / 2, m) % m;
-    p = (p * p) % m;
-  
-    return (y % 2 == 0) ? p : (x * p) % m;
+    for (int x = 1; x < m; x++)
+        if (((a%m) * (x%m)) % m == 1)
+            return x;
 }
 
 // tinh ci
@@ -50,9 +47,9 @@ int calcCi(int m1, int m2, int m3, int &c1, int &c2, int &c3){
 	int M2 = M/m2;
 	int M3 = M/m3;
 	
-	c1 = M1*power(M1,m1-2,m1);
-	c2 = M2*power(M2,m2-2,m2);
-	c3 = M3*power(M3,m3-2,m3);
+	c1 = M1*modInverse(M1,m1);
+	c2 = M2*modInverse(M2,m2);
+	c3 = M3*modInverse(M3,m3);
 }
 
 int main(){

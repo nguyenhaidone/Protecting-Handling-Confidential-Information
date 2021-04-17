@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-
+//Tam thoi chi tinh duoc khi phan tich thanh phi(n) thanh 2 thua so nguyen to
 //phan tich thanh cac thua so nguyen to
 void primeAnalys(int N, int &a, int &b){
 //    int Euler = 1;
@@ -31,7 +31,7 @@ void primeAnalys(int N, int &a, int &b){
 }
 
 // dung ha bac de tinh modulo
-int getValue(int &a, int &m, int &n){
+int getValue(int a, int m, int n){
 	int arr[100];
 	
 	int x=0;
@@ -60,31 +60,26 @@ int getValue(int &a, int &m, int &n){
 	return t;
 }
 
-//tinh ai
+//tinh ai = A mod m1
 
 void calcAmodm(int A, int k, int m1, int m2, int &a1, int &a2){
 	cout<<A<<" - "<<k<<" - "<<m1<<" - "<<m2<<endl;
 	int rAmodm1 = A%m1;
 	int kAmodm1 = k%(m1-1);
 	cout<<rAmodm1<<"^"<<kAmodm1<<endl;
-//	a1 = ((int)pow(rAmodm1,kAmodm1))%m1;
 	a1 = getValue(rAmodm1,kAmodm1,m1);
 	int rAmodm2 = A%m2;
 	int kAmodm2 = k%(m2-1);
-//	a2 = ((int)pow(rAmodm2,kAmodm2))%m2;
 	a2 = getValue(rAmodm2,kAmodm2,m2);
 }
 
 //tinh nghich dao modulo
 
-int power(int x, unsigned int y, unsigned int m)
+int modInverse(int a, int m)
 {
-    if (y == 0)
-        return 1;
-    int p = power(x, y / 2, m) % m;
-    p = (p * p) % m;
-  
-    return (y % 2 == 0) ? p : (x * p) % m;
+    for (int x = 1; x < m; x++)
+        if (((a%m) * (x%m)) % m == 1)
+            return x;
 }
 
 // tinh ci
@@ -93,8 +88,8 @@ int calcCi(int N, int m1, int m2, int &c1, int &c2){
 	int M1 = N/m1;
 	int M2 = N/m2;
 	
-	c1 = M1*power(M1,m1-2,m1);
-	c2 = M2*power(M2,m2-2,m2);
+	c1 = M1*modInverse(M1,m1);
+	c2 = M2*modInverse(M2,m2);
 }
 
 int main(){

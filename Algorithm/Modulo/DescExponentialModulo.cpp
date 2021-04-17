@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int getValue(int &a, int &m, int &n){
+int getValue(int a, int m, int n){
 	int arr[100];
 	
 	int x=0;
