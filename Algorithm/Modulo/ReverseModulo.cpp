@@ -10,7 +10,7 @@ int modInverse(int a, int m)
 // Driver Program
 int main()
 {
-    int a = 61, m = 3220;
+    int a = 116, m = 241;
     cout<<modInverse(a, m);
     return 0;
 }
