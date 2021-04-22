@@ -13,10 +13,11 @@ int modInverse(int a, int m)
     }
     	
 }
-// Driver Program
 int main()
 {
-    int a = 116, m = 241;
-    cout<<modInverse(a, m);
+    int a, m;
+    cout<<"x = a^-1 mod m, nhap a va m: ";
+    cin>>a>>m;
+    cout<<"x = "<<modInverse(a, m);
     return 0;
 }

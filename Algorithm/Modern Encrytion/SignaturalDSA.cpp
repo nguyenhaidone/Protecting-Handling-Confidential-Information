@@ -39,11 +39,11 @@ int modInverse(int a, int m)
 
 
 int main(){
-	int p = 23;
-	int q = 11;
-	int h = 6;
-	int xA = 8;
-	int k = 9;
+	int p = 47;
+	int q = 23;
+	int h = 34;
+	int xA = 2;
+	int k = 10;
 	int hm = 10;
 	int calcG = (p-1)/q;
 	int g = getValue(h,calcG,p);
@@ -60,6 +60,8 @@ int main(){
 	cout<<endl<<s1<<" va "<<s2<<endl;
 	int s = (s1*s2)%q;
 	cout<<"Step 3: Chu ki so: \n\t\tr="<<r<<"\n\t\ts="<<s<<"\n\t\tChu ki so: ("<<r<<" , "<<s<<")"<<endl;
+	
+	// xac thuc lai de kiem tra v = r'
 	int hmFake = hm;
 	int sFake = s;
 	int rFake = r;
